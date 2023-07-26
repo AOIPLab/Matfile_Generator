@@ -41,16 +41,16 @@ fname_list = {data_dir.name}';
 % loop to go through each file in folder
 for i = (1:length(data_dir))
     % finds files that are confocal
-    if contains(data_dir(i).name, 'CON')
-        % extracts the video number from the avi name
-        vid_num = str2double(data_dir(i).name(end-6:end-4));
-        % extracts the fov from the LUT
-        fov = LUT{vid_num + 1, 5};
-        % creates the variable we need to match what is normally in the mat
-        % file and extracted from ARFS
-        optical_scanners_settings.raster_scanner_amplitude_in_deg = fov;
-        save(fullfile(data_dir_path, strcat(data_dir(i).name(1:end-4), '.mat')), "optical_scanners_settings");
-    end
+%     if contains(data_dir(i).name, 'CON')
+    % extracts the video number from the avi name
+    vid_num = str2double(data_dir(i).name(end-6:end-4));
+    % extracts the fov from the LUT
+    fov = LUT{vid_num + 1, 5};
+    % creates the variable we need to match what is normally in the mat
+    % file and extracted from ARFS
+    optical_scanners_settings.raster_scanner_amplitude_in_deg = fov;
+    save(fullfile(data_dir_path, strcat(data_dir(i).name(1:end-4), '.mat')), "optical_scanners_settings");
+%     end
 
 end
 
