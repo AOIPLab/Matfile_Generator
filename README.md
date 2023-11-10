@@ -13,7 +13,6 @@ e.g. 3)
 Outputs: .mat files containing the struct and field containing the fov
 number that is used by ARFS for each confocal video in the data folder
 
-v1: only creates .mat files for confocal videos
-v2: creates .mat files for all videos
+Only creates .mat files for confocal videos
 
 
