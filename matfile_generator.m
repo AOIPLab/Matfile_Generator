@@ -44,8 +44,10 @@ for i = (1:length(data_dir))
     if contains(data_dir(i).name, 'CON')
         % extracts the video number from the avi name
         vid_num = str2double(data_dir(i).name(end-6:end-4));
+        % extracts which index that video number is on for the lut file
+        index = find([LUT{:,1}] == vid_num);
         % extracts the fov from the LUT
-        fov = LUT{vid_num + 1, 5};
+        fov = LUT{index, 5};
         % creates the variable we need to match what is normally in the mat
         % file and extracted from ARFS
         optical_scanners_settings.raster_scanner_amplitude_in_deg = fov;
