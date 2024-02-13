@@ -11,6 +11,7 @@
 % Outputs: .mat files containing the struct and field containing the fov
 % number that is used by ARFS for each confocal video in the data folder
 %
+% Developed with MATLAB 2023b, need at least 2022b to run
 
 clear all
 close all
@@ -41,7 +42,7 @@ fname_list = {data_dir.name}';
 % loop to go through each file in folder
 for i = (1:length(data_dir))
     % finds files that are confocal
-    if contains(data_dir(i).name, 'CON', IgnoreCase==true)
+    if contains(data_dir(i).name, 'CON', IgnoreCase=true)
         % extracts the video number from the avi name
         vid_num = str2double(data_dir(i).name(end-6:end-4));
         % extracts which index that video number is on for the lut file
